@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoUsados | Venta de autos usados</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo">AutoUsados</div>
+      <nav class="site-nav">
+        <a href="#inventario">Inventario</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto" class="cta">Publica tu auto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Autos certificados y listos para la entrega</p>
+          <h1>Encuentra tu próximo auto usado sin complicaciones.</h1>
+          <p>
+            Explora nuestro catálogo con historial transparente, financiamiento flexible y
+            asesoría experta en cada paso.
+          </p>
+          <div class="hero-actions">
+            <button class="primary">Ver autos disponibles</button>
+            <button class="ghost">Calcula tu cuota</button>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <strong>+1,200</strong>
+              <span>autos inspeccionados</span>
+            </div>
+            <div>
+              <strong>30 días</strong>
+              <span>de garantía extendida</span>
+            </div>
+            <div>
+              <strong>Financiamiento</strong>
+              <span>en 24 h</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Filtra tu búsqueda</h2>
+          <form class="filter-form">
+            <label>
+              Marca
+              <select>
+                <option>Todas</option>
+                <option>Chevrolet</option>
+                <option>Hyundai</option>
+                <option>Kia</option>
+                <option>Mazda</option>
+              </select>
+            </label>
+            <label>
+              Rango de precio
+              <input type="text" placeholder="$8.000 - $18.000" />
+            </label>
+            <label>
+              Año
+              <select>
+                <option>2020 - 2024</option>
+                <option>2016 - 2019</option>
+                <option>2010 - 2015</option>
+              </select>
+            </label>
+            <label>
+              Tipo de carrocería
+              <select>
+                <option>SUV</option>
+                <option>Sedán</option>
+                <option>Pickup</option>
+                <option>Hatchback</option>
+              </select>
+            </label>
+            <button type="submit" class="primary">Buscar autos</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="inventario" class="inventory">
+        <div class="section-header">
+          <h2>Inventario destacado</h2>
+          <p>Autos seleccionados con revisión de 180 puntos y garantía certificada.</p>
+        </div>
+        <div class="inventory-grid">
+          <article class="car-card">
+            <div class="car-tag">Certificado</div>
+            <h3>Hyundai Tucson 2021</h3>
+            <p>26.000 km · Automático · Gasolina</p>
+            <div class="car-footer">
+              <span>$17.800</span>
+              <button>Ver detalles</button>
+            </div>
+          </article>
+          <article class="car-card">
+            <div class="car-tag">Nuevo ingreso</div>
+            <h3>Kia Rio 2020</h3>
+            <p>42.500 km · Manual · Gasolina</p>
+            <div class="car-footer">
+              <span>$11.200</span>
+              <button>Ver detalles</button>
+            </div>
+          </article>
+          <article class="car-card">
+            <div class="car-tag">Financiamiento</div>
+            <h3>Mazda CX-5 2019</h3>
+            <p>58.000 km · Automático · Gasolina</p>
+            <div class="car-footer">
+              <span>$16.400</span>
+              <button>Ver detalles</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="beneficios" class="benefits">
+        <h2>Compra con confianza</h2>
+        <div class="benefit-grid">
+          <div>
+            <h3>Inspección total</h3>
+            <p>Revisamos cada auto con estándares de calidad y entregamos informe digital.</p>
+          </div>
+          <div>
+            <h3>Plan de pagos</h3>
+            <p>Opciones de financiamiento y seguros personalizados para tu presupuesto.</p>
+          </div>
+          <div>
+            <h3>Acompañamiento experto</h3>
+            <p>Asesores dedicados antes y después de la compra para una experiencia completa.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonios" class="testimonials">
+        <div class="section-header">
+          <h2>Clientes satisfechos</h2>
+          <p>Historias reales de compradores que encontraron su auto ideal con AutoUsados.</p>
+        </div>
+        <div class="testimonial-cards">
+          <article>
+            <p>“Todo el proceso fue rápido, transparente y con acompañamiento.”</p>
+            <span>María Gómez · Quito</span>
+          </article>
+          <article>
+            <p>“Recibí mi auto con garantía y un plan de financiamiento claro.”</p>
+            <span>Daniel Ríos · Bogotá</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="contacto" class="contact">
+        <div>
+          <h2>¿Listo para vender tu auto?</h2>
+          <p>Agenda una inspección gratuita y recibe una oferta en menos de 24 horas.</p>
+        </div>
+        <button class="primary">Quiero vender mi auto</button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2024 AutoUsados. Todos los derechos reservados.</p>
+      <div>
+        <span>Contacto: +57 300 123 4567</span>
+        <span>soporte@autousados.com</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
