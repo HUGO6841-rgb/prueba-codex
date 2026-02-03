@@ -63,6 +63,112 @@ if (quickForm) {
 
 const leadForm = document.querySelector("#lead-form");
 const toast = document.querySelector("#toast");
+const leadBrandSelect = document.querySelector("#lead-brand");
+const leadModelSelect = document.querySelector("#lead-model");
+
+const brandModels = {
+  Audi: ["A3", "A4", "Q3", "Q5", "Q7"],
+  BMW: ["Serie 1", "Serie 3", "X1", "X3", "X5"],
+  BYD: ["Dolphin", "Han", "Song Plus", "Yuan Pro"],
+  Changan: ["CS35", "CS55", "CS75", "Hunter"],
+  Chery: ["Arrizo 5", "Tiggo 2", "Tiggo 4", "Tiggo 7", "Tiggo 8"],
+  Chevrolet: ["Onix", "Tracker", "Equinox", "Captiva", "Sail"],
+  "Citroën": ["C3", "C4", "C5 Aircross"],
+  DFSK: ["Glory 500", "Glory 560", "Glory 580"],
+  Dodge: ["Journey", "Durango"],
+  Dongfeng: ["Aeolus AX7", "Rich 6"],
+  Ford: ["Territory", "Escape", "Ranger", "Bronco Sport"],
+  Geely: ["Coolray", "Geometry C", "Emgrand"],
+  "Great Wall (GWM)": ["Poer", "Wingle 7"],
+  Haval: ["H6", "Jolion"],
+  Honda: ["Civic", "City", "HR-V", "CR-V", "WR-V"],
+  Hyundai: ["Accent", "Elantra", "Creta", "Tucson", "Santa Fe"],
+  Isuzu: ["D-Max", "MU-X"],
+  JAC: ["S2", "S3", "T6", "T8"],
+  Jeep: ["Renegade", "Compass", "Commander"],
+  Kia: ["Rio", "Seltos", "Sportage", "Sorento", "Picanto"],
+  "Land Rover": ["Discovery Sport", "Range Rover Evoque"],
+  Lexus: ["NX", "RX", "UX", "ES"],
+  Mazda: ["Mazda 2", "Mazda 3", "CX-30", "CX-5", "CX-9"],
+  "Mercedes-Benz": ["A-Class", "GLA", "GLB", "GLC"],
+  MINI: ["Cooper", "Countryman"],
+  Mitsubishi: ["ASX", "Outlander", "Montero Sport", "L200"],
+  MG: ["MG3", "MG5", "ZS", "HS"],
+  Nissan: ["Versa", "Sentra", "Kicks", "X-Trail", "Frontier"],
+  Peugeot: ["208", "2008", "3008", "5008"],
+  Porsche: ["Macan", "Cayenne"],
+  RAM: ["1500", "2500"],
+  Renault: ["Kwid", "Duster", "Koleos", "Oroch"],
+  SsangYong: ["Tivoli", "Korando", "Rexton"],
+  Subaru: ["Forester", "Outback", "XV"],
+  Suzuki: ["Swift", "Vitara", "Jimny", "S-Cross"],
+  Toyota: ["Corolla", "Yaris", "Hilux", "RAV4", "Fortuner", "Rush", "Prado"],
+  Volkswagen: ["Gol", "Polo", "T-Cross", "Taos", "Tiguan"],
+  Volvo: ["XC40", "XC60", "XC90"],
+};
+
+const peruBrandList = [
+  "Audi",
+  "BAIC",
+  "BMW",
+  "BYD",
+  "Changan",
+  "Chery",
+  "Chevrolet",
+  "Citroën",
+  "DFSK",
+  "Dodge",
+  "Dongfeng",
+  "Foton",
+  "Ford",
+  "Geely",
+  "Great Wall (GWM)",
+  "Haval",
+  "Honda",
+  "Hyundai",
+  "Isuzu",
+  "JAC",
+  "Jeep",
+  "Kia",
+  "Land Rover",
+  "Lexus",
+  "Mazda",
+  "Mercedes-Benz",
+  "MINI",
+  "Mitsubishi",
+  "MG",
+  "Nissan",
+  "Peugeot",
+  "Porsche",
+  "RAM",
+  "Renault",
+  "SsangYong",
+  "Subaru",
+  "Suzuki",
+  "Toyota",
+  "Volkswagen",
+  "Volvo",
+].sort((a, b) => a.localeCompare(b, "es"));
+
+const updateLeadModelOptions = () => {
+  if (!leadModelSelect) return;
+  const selectedBrand = leadBrandSelect?.value || "";
+
+  if (!selectedBrand) {
+    populateSelect(leadModelSelect, [], "Selecciona un modelo");
+    return;
+  }
+
+  const models = brandModels[selectedBrand] || [];
+  const modelOptions = models.length ? models : ["Otros / No especificado"];
+  populateSelect(leadModelSelect, modelOptions, "Selecciona un modelo");
+};
+
+const updateLeadBrandOptions = () => {
+  if (!leadBrandSelect) return;
+  populateSelect(leadBrandSelect, peruBrandList, "Selecciona una marca");
+  updateLeadModelOptions();
+};
 if (leadForm && toast) {
   leadForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -80,8 +186,10 @@ if (leadForm && toast) {
     }, 700);
 
     leadForm.reset();
+    updateLeadModelOptions();
   });
 }
+
 
 const createCarImage = (label) => {
   const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='640' height='400'>
@@ -596,6 +704,9 @@ const populateSelect = (select, options, placeholder) => {
     ${options.map((option) => `<option value="${option}">${option}</option>`).join("")}
   `;
 };
+
+leadBrandSelect?.addEventListener("change", updateLeadModelOptions);
+updateLeadBrandOptions();
 
 const updateFilterOptions = () => {
   const brandOptions = [...new Set(inventoryData.map((car) => car.marca))].sort();
