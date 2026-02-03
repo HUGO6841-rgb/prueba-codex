@@ -109,6 +109,12 @@ textarea {
   color: var(--primary);
 }
 
+.btn-primary {
+  background: var(--accent);
+  color: #111;
+  border: none;
+}
+
 .btn-outline {
   border-color: var(--accent);
   color: var(--accent);
