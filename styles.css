@@ -436,12 +436,30 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0.6rem;
+  margin-top: 0.2rem;
 }
 
 .car-price {
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+.car-location {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.car-specs {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0.6rem;
+}
+
+.car-specs strong {
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .car-footer {
@@ -564,6 +582,10 @@ button:focus,
   .cta-final {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
   }
 
   .lead-form {
