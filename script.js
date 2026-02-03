@@ -63,8 +63,8 @@ if (quickForm) {
 
 const leadForm = document.querySelector("#lead-form");
 const toast = document.querySelector("#toast");
-const leadBrandSelect = document.querySelector("#lead-brand");
-const leadModelSelect = document.querySelector("#lead-model");
+const leadBrandSelect = document.querySelector("#sellBrand");
+const leadModelSelect = document.querySelector("#sellModel");
 
 const brandModels = {
   Audi: ["A3", "A4", "Q3", "Q5", "Q7"],
@@ -107,7 +107,7 @@ const brandModels = {
   Volvo: ["XC40", "XC60", "XC90"],
 };
 
-const peruBrandList = [
+const BRANDS = [
   "Audi",
   "BAIC",
   "BMW",
@@ -166,7 +166,7 @@ const updateLeadModelOptions = () => {
 
 const updateLeadBrandOptions = () => {
   if (!leadBrandSelect) return;
-  populateSelect(leadBrandSelect, peruBrandList, "Selecciona una marca");
+  populateSelect(leadBrandSelect, BRANDS, "Selecciona una marca");
   updateLeadModelOptions();
 };
 if (leadForm && toast) {
@@ -176,7 +176,12 @@ if (leadForm && toast) {
 
     const formData = new FormData(leadForm);
     const values = Object.fromEntries(formData.entries());
-    const message = buildWhatsAppMessage({ intent: "lead", ...values });
+    const message = buildWhatsAppMessage({
+      intent: "lead",
+      ...values,
+      brand: values.sellBrand,
+      model: values.sellModel,
+    });
 
     toast.textContent = "¡Listo! Un asesor de KliqCarGo te contactará muy pronto.";
     toast.style.display = "block";
