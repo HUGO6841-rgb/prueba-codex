@@ -1,13 +1,22 @@
-const whatsappNumber = "51999999999";
+const whatsappNumber = "51993276760";
 
-const buildWhatsAppMessage = (values) => {
-  const parts = ["Hola KliqCarGo, quiero vender mi auto."];
-  if (values.brand) parts.push(`Marca: ${values.brand}`);
-  if (values.model) parts.push(`Modelo: ${values.model}`);
-  if (values.year) parts.push(`Año: ${values.year}`);
-  if (values.name) parts.push(`Nombre: ${values.name}`);
-  if (values.phone) parts.push(`Teléfono: ${values.phone}`);
-  return parts.join(" ");
+const buildWhatsAppMessage = ({ intent, ...values }) => {
+  const lines = ["Hola KliqCarGo 👋", "Quiero vender mi auto y conseguir la mejor oferta."];
+
+  if (intent === "car") {
+    lines.push("Estoy evaluando vender este auto con ustedes:");
+  }
+
+  if (values.brand) lines.push(`Marca: ${values.brand}`);
+  if (values.model) lines.push(`Modelo: ${values.model}`);
+  if (values.year) lines.push(`Año: ${values.year}`);
+
+  if (values.name) lines.push(`Nombre: ${values.name}`);
+  if (values.phone) lines.push(`Teléfono: ${values.phone}`);
+
+  lines.push("¿Podemos coordinar la evaluación y los siguientes pasos?");
+
+  return lines.join("\n");
 };
 
 const buildWhatsAppLink = (message) =>
@@ -15,15 +24,15 @@ const buildWhatsAppLink = (message) =>
 
 const whatsappLinks = document.querySelectorAll(".whatsapp-link");
 whatsappLinks.forEach((link) => {
-  const data = link.dataset.whatsapp;
-  if (data && data.includes("|")) {
-    const [model, year] = data.split("|");
-    link.href = buildWhatsAppLink(
-      buildWhatsAppMessage({ brand: model.split(" ")[0], model, year })
-    );
-  } else {
-    link.href = buildWhatsAppLink(buildWhatsAppMessage({}));
-  }
+  const { whatsappIntent, brand, model, year } = link.dataset;
+  link.href = buildWhatsAppLink(
+    buildWhatsAppMessage({
+      intent: whatsappIntent || "general",
+      brand,
+      model,
+      year,
+    })
+  );
 });
 
 const quickForm = document.querySelector("#quick-form");
@@ -34,6 +43,7 @@ if (quickForm) {
 
     const formData = new FormData(quickForm);
     const message = buildWhatsAppMessage({
+      intent: "cta",
       name: formData.get("name"),
       phone: formData.get("phone"),
       brand: formData.get("brand"),
@@ -53,7 +63,7 @@ if (leadForm && toast) {
 
     const formData = new FormData(leadForm);
     const values = Object.fromEntries(formData.entries());
-    const message = buildWhatsAppMessage(values);
+    const message = buildWhatsAppMessage({ intent: "lead", ...values });
 
     toast.textContent = "¡Listo! Un asesor de KliqCarGo te contactará muy pronto.";
     toast.style.display = "block";
