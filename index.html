@@ -3,285 +3,550 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AutoUsados Market | Marketplace de autos usados</title>
+    <title>KliqCarGo | Vende tu auto rápido en Lima</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <div class="logo">AutoUsados Market</div>
+      <div class="logo">
+        <span>KliqCarGo</span>
+        <small>Marketplace premium de autos</small>
+      </div>
       <nav class="site-nav">
-        <a href="#inventario">Inventario</a>
+        <a href="#como-funciona">Cómo funciona</a>
         <a href="#beneficios">Beneficios</a>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#contacto" class="cta">Publica tu auto</a>
+        <a href="#autos">Autos</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-accent" href="#formulario">Vender mi auto</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" id="inicio">
         <div class="hero-content">
-          <p class="eyebrow">Autos certificados y listos para la entrega</p>
-          <h1>El marketplace moderno para comprar y vender autos usados.</h1>
+          <p class="eyebrow">Venta inteligente · Lima, Perú</p>
+          <h1>Vende tu auto con una oferta justa y acompañamiento experto.</h1>
           <p>
-            Descubre publicaciones verificadas, compara precios en tiempo real y conecta directo
-            con vendedores confiables.
+            En KliqCarGo conectamos tu auto con compradores verificados, te asesoramos en cada
+            paso y garantizamos un cierre seguro en el menor tiempo posible.
           </p>
           <div class="hero-actions">
-            <button class="primary">Ver autos disponibles</button>
-            <button class="ghost">Calcula tu cuota</button>
+            <a class="btn btn-accent" href="#formulario">Cotizar ahora</a>
+            <a
+              class="btn btn-outline whatsapp-link"
+              href="https://wa.me/51999999999"
+              target="_blank"
+              rel="noreferrer"
+              data-whatsapp="hero"
+            >
+              Hablar por WhatsApp
+            </a>
           </div>
-          <div class="hero-stats">
+          <div class="hero-highlights">
             <div>
-              <strong>+1,200</strong>
-              <span>autos inspeccionados</span>
+              <strong>24h</strong>
+              <span>Respuesta promedio</span>
             </div>
             <div>
-              <strong>30 días</strong>
-              <span>de garantía extendida</span>
+              <strong>0% estrés</strong>
+              <span>Gestión total</span>
             </div>
             <div>
-              <strong>Financiamiento</strong>
-              <span>en 24 h</span>
+              <strong>+3,200</strong>
+              <span>ventas cerradas</span>
             </div>
           </div>
         </div>
         <div class="hero-card">
-          <h2>Filtra tu búsqueda</h2>
-          <form class="filter-form">
-            <label>
-              Marca
-              <select>
-                <option>Todas</option>
-                <option>Chevrolet</option>
-                <option>Hyundai</option>
-                <option>Kia</option>
-                <option>Mazda</option>
-              </select>
-            </label>
-            <label>
-              Rango de precio
-              <input type="text" placeholder="$8.000 - $18.000" />
-            </label>
-            <label>
-              Año
-              <select>
-                <option>2020 - 2024</option>
-                <option>2016 - 2019</option>
-                <option>2010 - 2015</option>
-              </select>
-            </label>
-            <label>
-              Tipo de carrocería
-              <select>
-                <option>SUV</option>
-                <option>Sedán</option>
-                <option>Pickup</option>
-                <option>Hatchback</option>
-              </select>
-            </label>
-            <button type="submit" class="primary">Buscar autos</button>
+          <h2>Recibe una pre-oferta hoy</h2>
+          <p>Completa el formulario y agenda tu inspección sin costo.</p>
+          <form class="quick-form" id="quick-form">
+            <label for="quick-name">Nombre completo</label>
+            <input id="quick-name" name="name" type="text" placeholder="Tu nombre" required />
+            <label for="quick-phone">Teléfono</label>
+            <input
+              id="quick-phone"
+              name="phone"
+              type="tel"
+              placeholder="+51 9XX XXX XXX"
+              required
+            />
+            <label for="quick-brand">Marca</label>
+            <input id="quick-brand" name="brand" type="text" placeholder="Ej. Toyota" required />
+            <button class="btn btn-accent" type="submit">Quiero mi pre-oferta</button>
+            <span class="form-note">Respuesta en menos de 2 horas hábiles.</span>
           </form>
         </div>
       </section>
 
-      <section id="inventario" class="inventory">
+      <section class="steps" id="como-funciona">
         <div class="section-header">
-          <h2>Inventario destacado</h2>
-          <p>Autos seleccionados con revisión de 180 puntos y garantía certificada.</p>
+          <h2>¿Cómo funciona?</h2>
+          <p>Un proceso claro, seguro y sin complicaciones.</p>
         </div>
-        <div class="inventory-grid">
-          <article class="car-card">
-            <div class="car-media">
-              <img
-                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"
-                alt="Hyundai Tucson 2021"
-              />
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-icon">📝</span>
+            <h3>Registra tu auto</h3>
+            <p>Comparte los datos clave y agenda una inspección cuando quieras.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-icon">💬</span>
+            <h3>Recibe una oferta</h3>
+            <p>Te damos una propuesta transparente con respaldo de mercado.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-icon">🤝</span>
+            <h3>Cerramos la venta contigo</h3>
+            <p>Coordinamos trámites, pagos y entrega con compradores verificados.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="benefits" id="beneficios">
+        <div class="section-header">
+          <h2>Beneficios que aceleran tu venta</h2>
+          <p>Con KliqCarGo tu auto está en manos de especialistas.</p>
+        </div>
+        <div class="benefits-grid">
+          <ul class="benefit-list">
+            <li>Venta rápida con visibilidad en canales premium.</li>
+            <li>Pago transparente y acompañamiento legal.</li>
+            <li>Asesoría personalizada para fijar el mejor precio.</li>
+            <li>Compradores verificados y procesos seguros.</li>
+          </ul>
+          <div class="benefit-card">
+            <h3>Tu auto, tu decisión</h3>
+            <p>
+              Definimos juntos el valor y recibes reportes constantes. Sin comisiones ocultas ni
+              compromisos forzados.
+            </p>
+            <div class="benefit-stats">
+              <div>
+                <strong>+92%</strong>
+                <span>clientes satisfechos</span>
+              </div>
+              <div>
+                <strong>48h</strong>
+                <span>para cerrar ofertas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lead-form" id="formulario">
+        <div class="section-header">
+          <h2>Solicita tu cotización personalizada</h2>
+          <p>Deja tus datos y un asesor de KliqCarGo se contactará contigo.</p>
+        </div>
+        <form class="main-form" id="lead-form">
+          <div class="form-grid">
+            <label>
+              Nombre completo
+              <input type="text" name="name" placeholder="Ej. Andrea Salazar" required />
+            </label>
+            <label>
+              Teléfono
+              <input type="tel" name="phone" placeholder="+51 9XX XXX XXX" required />
+            </label>
+            <label>
+              Correo electrónico
+              <input type="email" name="email" placeholder="tucorreo@email.com" required />
+            </label>
+            <label>
+              Marca
+              <input type="text" name="brand" placeholder="Ej. Kia" required />
+            </label>
+            <label>
+              Modelo
+              <input type="text" name="model" placeholder="Ej. Sportage" required />
+            </label>
+            <label>
+              Año
+              <input type="number" name="year" placeholder="2020" min="1995" max="2025" required />
+            </label>
+            <label>
+              Kilometraje
+              <input type="number" name="km" placeholder="45,000" />
+            </label>
+            <label>
+              Precio esperado (opcional)
+              <input type="number" name="price" placeholder="S/ 42,000" />
+            </label>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-accent">Quiero vender con KliqCarGo</button>
+            <p class="form-note">
+              Tus datos están protegidos. Respuesta en menos de 2 horas hábiles.
+            </p>
+          </div>
+        </form>
+        <div class="toast" role="status" aria-live="polite" id="toast"></div>
+      </section>
+
+      <section class="inventory" id="autos">
+        <div class="section-header">
+          <h2>Autos en vitrina KliqCarGo</h2>
+          <p>Ejemplos reales de autos destacados para compradores serios.</p>
+        </div>
+        <div class="filters">
+          <label>
+            Marca
+            <select id="filter-brand">
+              <option value="">Todas</option>
+              <option value="Toyota">Toyota</option>
+              <option value="Kia">Kia</option>
+              <option value="Hyundai">Hyundai</option>
+              <option value="Mazda">Mazda</option>
+              <option value="Chevrolet">Chevrolet</option>
+            </select>
+          </label>
+          <label>
+            Año
+            <select id="filter-year">
+              <option value="">Todos</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+            </select>
+          </label>
+          <label>
+            Precio
+            <select id="filter-price">
+              <option value="">Todos</option>
+              <option value="0-25000">Hasta $25K</option>
+              <option value="25000-35000">$25K - $35K</option>
+              <option value="35000-50000">$35K - $50K</option>
+            </select>
+          </label>
+        </div>
+        <div class="inventory-grid" id="inventory-grid">
+          <article class="car-card" data-brand="Toyota" data-year="2023" data-price="38000">
+            <div class="car-media" aria-hidden="true">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23F6F7FB'/%3E%3Cpath d='M90 270h460l30-60-60-70H190l-70 70z' fill='%231F3A5F' opacity='0.9'/%3E%3Ccircle cx='200' cy='280' r='34' fill='%230B1220'/%3E%3Ccircle cx='440' cy='280' r='34' fill='%230B1220'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%2364748B' font-size='22' font-family='Inter'%3EToyota Corolla Hybrid%3C/text%3E%3C/svg%3E" alt="Toyota Corolla Hybrid 2023" />
+              <span class="car-tag">Premium</span>
+            </div>
+            <div class="car-body">
+              <h3>Toyota Corolla Hybrid</h3>
+              <p class="car-meta">2023 · 18,200 km · Lima</p>
+              <div class="car-price-row">
+                <span class="car-price">$38,000</span>
+                <span class="car-location">Miraflores</span>
+              </div>
+            </div>
+            <div class="car-footer">
+              <a class="btn btn-ghost" href="#formulario">Cotizar</a>
+              <a
+                class="btn btn-outline whatsapp-link"
+                href="https://wa.me/51999999999"
+                target="_blank"
+                rel="noreferrer"
+                data-whatsapp="Toyota Corolla Hybrid|2023"
+              >
+                Consultar por WhatsApp
+              </a>
+            </div>
+          </article>
+          <article class="car-card" data-brand="Kia" data-year="2022" data-price="29000">
+            <div class="car-media" aria-hidden="true">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23F6F7FB'/%3E%3Cpath d='M110 260h420l36-70-70-70H210l-80 70z' fill='%230B1220' opacity='0.9'/%3E%3Ccircle cx='210' cy='280' r='34' fill='%231F3A5F'/%3E%3Ccircle cx='430' cy='280' r='34' fill='%231F3A5F'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%2364748B' font-size='22' font-family='Inter'%3EKia Sportage%3C/text%3E%3C/svg%3E" alt="Kia Sportage 2022" />
+              <span class="car-tag">Top venta</span>
+            </div>
+            <div class="car-body">
+              <h3>Kia Sportage</h3>
+              <p class="car-meta">2022 · 32,000 km · Lima</p>
+              <div class="car-price-row">
+                <span class="car-price">$29,000</span>
+                <span class="car-location">San Borja</span>
+              </div>
+            </div>
+            <div class="car-footer">
+              <a class="btn btn-ghost" href="#formulario">Cotizar</a>
+              <a
+                class="btn btn-outline whatsapp-link"
+                href="https://wa.me/51999999999"
+                target="_blank"
+                rel="noreferrer"
+                data-whatsapp="Kia Sportage|2022"
+              >
+                Consultar por WhatsApp
+              </a>
+            </div>
+          </article>
+          <article class="car-card" data-brand="Hyundai" data-year="2021" data-price="25000">
+            <div class="car-media" aria-hidden="true">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23F6F7FB'/%3E%3Cpath d='M80 260h480l30-60-80-60H200l-70 60z' fill='%231F3A5F' opacity='0.9'/%3E%3Ccircle cx='200' cy='280' r='34' fill='%230B1220'/%3E%3Ccircle cx='450' cy='280' r='34' fill='%230B1220'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%2364748B' font-size='22' font-family='Inter'%3EHyundai Creta%3C/text%3E%3C/svg%3E" alt="Hyundai Creta 2021" />
               <span class="car-tag">Certificado</span>
             </div>
             <div class="car-body">
-              <h3>Hyundai Tucson 2021</h3>
-              <p class="car-meta">26.000 km · Automático · Gasolina</p>
+              <h3>Hyundai Creta</h3>
+              <p class="car-meta">2021 · 45,500 km · Lima</p>
               <div class="car-price-row">
-                <span class="car-price">$17.800</span>
-                <span class="car-location">Quito</span>
+                <span class="car-price">$25,000</span>
+                <span class="car-location">Surco</span>
               </div>
             </div>
             <div class="car-footer">
-              <button class="details">Ver detalles</button>
-              <a class="whatsapp" href="https://wa.me/573001234567" target="_blank" rel="noreferrer">
-                WhatsApp
+              <a class="btn btn-ghost" href="#formulario">Cotizar</a>
+              <a
+                class="btn btn-outline whatsapp-link"
+                href="https://wa.me/51999999999"
+                target="_blank"
+                rel="noreferrer"
+                data-whatsapp="Hyundai Creta|2021"
+              >
+                Consultar por WhatsApp
               </a>
             </div>
           </article>
-          <article class="car-card">
-            <div class="car-media">
-              <img
-                src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1200&q=80"
-                alt="Kia Rio 2020"
-              />
-              <span class="car-tag">Nuevo ingreso</span>
+          <article class="car-card" data-brand="Mazda" data-year="2024" data-price="46000">
+            <div class="car-media" aria-hidden="true">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23F6F7FB'/%3E%3Cpath d='M95 260h460l40-75-90-55H220l-85 55z' fill='%230B1220' opacity='0.9'/%3E%3Ccircle cx='210' cy='282' r='34' fill='%231F3A5F'/%3E%3Ccircle cx='430' cy='282' r='34' fill='%231F3A5F'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%2364748B' font-size='22' font-family='Inter'%3EMazda CX-5%3C/text%3E%3C/svg%3E" alt="Mazda CX-5 2024" />
+              <span class="car-tag">Nuevo</span>
             </div>
             <div class="car-body">
-              <h3>Kia Rio 2020</h3>
-              <p class="car-meta">42.500 km · Manual · Gasolina</p>
+              <h3>Mazda CX-5 Signature</h3>
+              <p class="car-meta">2024 · 8,900 km · Lima</p>
               <div class="car-price-row">
-                <span class="car-price">$11.200</span>
-                <span class="car-location">Bogotá</span>
+                <span class="car-price">$46,000</span>
+                <span class="car-location">San Isidro</span>
               </div>
             </div>
             <div class="car-footer">
-              <button class="details">Ver detalles</button>
-              <a class="whatsapp" href="https://wa.me/573001234567" target="_blank" rel="noreferrer">
-                WhatsApp
+              <a class="btn btn-ghost" href="#formulario">Cotizar</a>
+              <a
+                class="btn btn-outline whatsapp-link"
+                href="https://wa.me/51999999999"
+                target="_blank"
+                rel="noreferrer"
+                data-whatsapp="Mazda CX-5 Signature|2024"
+              >
+                Consultar por WhatsApp
               </a>
             </div>
           </article>
-          <article class="car-card">
-            <div class="car-media">
-              <img
-                src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80"
-                alt="Mazda CX-5 2019"
-              />
-              <span class="car-tag">Financiamiento</span>
+          <article class="car-card" data-brand="Chevrolet" data-year="2020" data-price="22000">
+            <div class="car-media" aria-hidden="true">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23F6F7FB'/%3E%3Cpath d='M100 260h440l30-65-70-55H220l-75 55z' fill='%231F3A5F' opacity='0.9'/%3E%3Ccircle cx='210' cy='280' r='34' fill='%230B1220'/%3E%3Ccircle cx='420' cy='280' r='34' fill='%230B1220'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%2364748B' font-size='22' font-family='Inter'%3EChevrolet Onix%3C/text%3E%3C/svg%3E" alt="Chevrolet Onix 2020" />
+              <span class="car-tag">Urbano</span>
             </div>
             <div class="car-body">
-              <h3>Mazda CX-5 2019</h3>
-              <p class="car-meta">58.000 km · Automático · Gasolina</p>
+              <h3>Chevrolet Onix</h3>
+              <p class="car-meta">2020 · 54,000 km · Lima</p>
               <div class="car-price-row">
-                <span class="car-price">$16.400</span>
-                <span class="car-location">Medellín</span>
+                <span class="car-price">$22,000</span>
+                <span class="car-location">Jesús María</span>
               </div>
             </div>
             <div class="car-footer">
-              <button class="details">Ver detalles</button>
-              <a class="whatsapp" href="https://wa.me/573001234567" target="_blank" rel="noreferrer">
-                WhatsApp
+              <a class="btn btn-ghost" href="#formulario">Cotizar</a>
+              <a
+                class="btn btn-outline whatsapp-link"
+                href="https://wa.me/51999999999"
+                target="_blank"
+                rel="noreferrer"
+                data-whatsapp="Chevrolet Onix|2020"
+              >
+                Consultar por WhatsApp
               </a>
             </div>
           </article>
-          <article class="car-card">
-            <div class="car-media">
-              <img
-                src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80"
-                alt="Chevrolet Onix 2022"
-              />
-              <span class="car-tag">Popular</span>
+          <article class="car-card" data-brand="Toyota" data-year="2019" data-price="24000">
+            <div class="car-media" aria-hidden="true">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23F6F7FB'/%3E%3Cpath d='M80 260h480l40-70-85-60H200l-80 60z' fill='%230B1220' opacity='0.9'/%3E%3Ccircle cx='200' cy='280' r='34' fill='%231F3A5F'/%3E%3Ccircle cx='455' cy='280' r='34' fill='%231F3A5F'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%2364748B' font-size='22' font-family='Inter'%3EToyota RAV4%3C/text%3E%3C/svg%3E" alt="Toyota RAV4 2019" />
+              <span class="car-tag">SUV</span>
             </div>
             <div class="car-body">
-              <h3>Chevrolet Onix 2022</h3>
-              <p class="car-meta">18.400 km · Automático · Gasolina</p>
+              <h3>Toyota RAV4</h3>
+              <p class="car-meta">2019 · 68,000 km · Lima</p>
               <div class="car-price-row">
-                <span class="car-price">$13.950</span>
-                <span class="car-location">Guayaquil</span>
+                <span class="car-price">$24,000</span>
+                <span class="car-location">La Molina</span>
               </div>
             </div>
             <div class="car-footer">
-              <button class="details">Ver detalles</button>
-              <a class="whatsapp" href="https://wa.me/573001234567" target="_blank" rel="noreferrer">
-                WhatsApp
+              <a class="btn btn-ghost" href="#formulario">Cotizar</a>
+              <a
+                class="btn btn-outline whatsapp-link"
+                href="https://wa.me/51999999999"
+                target="_blank"
+                rel="noreferrer"
+                data-whatsapp="Toyota RAV4|2019"
+              >
+                Consultar por WhatsApp
               </a>
             </div>
           </article>
-          <article class="car-card">
-            <div class="car-media">
-              <img
-                src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1200&q=80"
-                alt="Toyota Corolla 2018"
-              />
-              <span class="car-tag">Oferta</span>
+          <article class="car-card" data-brand="Hyundai" data-year="2023" data-price="31000">
+            <div class="car-media" aria-hidden="true">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23F6F7FB'/%3E%3Cpath d='M95 260h460l35-60-75-60H210l-90 60z' fill='%231F3A5F' opacity='0.9'/%3E%3Ccircle cx='215' cy='280' r='34' fill='%230B1220'/%3E%3Ccircle cx='430' cy='280' r='34' fill='%230B1220'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%2364748B' font-size='22' font-family='Inter'%3EHyundai Tucson%3C/text%3E%3C/svg%3E" alt="Hyundai Tucson 2023" />
+              <span class="car-tag">Garantía</span>
             </div>
             <div class="car-body">
-              <h3>Toyota Corolla 2018</h3>
-              <p class="car-meta">64.200 km · Manual · Gasolina</p>
+              <h3>Hyundai Tucson</h3>
+              <p class="car-meta">2023 · 21,400 km · Lima</p>
               <div class="car-price-row">
-                <span class="car-price">$12.300</span>
-                <span class="car-location">Cali</span>
+                <span class="car-price">$31,000</span>
+                <span class="car-location">San Miguel</span>
               </div>
             </div>
             <div class="car-footer">
-              <button class="details">Ver detalles</button>
-              <a class="whatsapp" href="https://wa.me/573001234567" target="_blank" rel="noreferrer">
-                WhatsApp
+              <a class="btn btn-ghost" href="#formulario">Cotizar</a>
+              <a
+                class="btn btn-outline whatsapp-link"
+                href="https://wa.me/51999999999"
+                target="_blank"
+                rel="noreferrer"
+                data-whatsapp="Hyundai Tucson|2023"
+              >
+                Consultar por WhatsApp
               </a>
             </div>
           </article>
-          <article class="car-card">
-            <div class="car-media">
-              <img
-                src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80"
-                alt="Ford Ranger 2020"
-              />
-              <span class="car-tag">4x4</span>
+          <article class="car-card" data-brand="Kia" data-year="2024" data-price="34000">
+            <div class="car-media" aria-hidden="true">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23F6F7FB'/%3E%3Cpath d='M100 260h450l35-70-80-55H220l-75 55z' fill='%230B1220' opacity='0.9'/%3E%3Ccircle cx='215' cy='280' r='34' fill='%231F3A5F'/%3E%3Ccircle cx='430' cy='280' r='34' fill='%231F3A5F'/%3E%3Ctext x='50%25' y='52%25' text-anchor='middle' fill='%2364748B' font-size='22' font-family='Inter'%3EKia Seltos%3C/text%3E%3C/svg%3E" alt="Kia Seltos 2024" />
+              <span class="car-tag">Full equipo</span>
             </div>
             <div class="car-body">
-              <h3>Ford Ranger 2020</h3>
-              <p class="car-meta">39.800 km · Automático · Diésel</p>
+              <h3>Kia Seltos</h3>
+              <p class="car-meta">2024 · 12,500 km · Lima</p>
               <div class="car-price-row">
-                <span class="car-price">$21.600</span>
-                <span class="car-location">Barranquilla</span>
+                <span class="car-price">$34,000</span>
+                <span class="car-location">Barranco</span>
               </div>
             </div>
             <div class="car-footer">
-              <button class="details">Ver detalles</button>
-              <a class="whatsapp" href="https://wa.me/573001234567" target="_blank" rel="noreferrer">
-                WhatsApp
+              <a class="btn btn-ghost" href="#formulario">Cotizar</a>
+              <a
+                class="btn btn-outline whatsapp-link"
+                href="https://wa.me/51999999999"
+                target="_blank"
+                rel="noreferrer"
+                data-whatsapp="Kia Seltos|2024"
+              >
+                Consultar por WhatsApp
               </a>
             </div>
           </article>
         </div>
       </section>
 
-      <section id="beneficios" class="benefits">
-        <h2>Compra con confianza</h2>
-        <div class="benefit-grid">
-          <div>
-            <h3>Inspección total</h3>
-            <p>Revisamos cada auto con estándares de calidad y entregamos informe digital.</p>
-          </div>
-          <div>
-            <h3>Plan de pagos</h3>
-            <p>Opciones de financiamiento y seguros personalizados para tu presupuesto.</p>
-          </div>
-          <div>
-            <h3>Acompañamiento experto</h3>
-            <p>Asesores dedicados antes y después de la compra para una experiencia completa.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="testimonios" class="testimonials">
+      <section class="testimonials" id="testimonios">
         <div class="section-header">
-          <h2>Clientes satisfechos</h2>
-          <p>Historias reales de compradores que encontraron su auto ideal con AutoUsados.</p>
+          <h2>Testimonios reales</h2>
+          <p>Clientes que vendieron su auto con seguridad y rapidez.</p>
         </div>
-        <div class="testimonial-cards">
+        <div class="testimonial-grid">
           <article>
-            <p>“Todo el proceso fue rápido, transparente y con acompañamiento.”</p>
-            <span>María Gómez · Quito</span>
+            <p>“Me guiaron con todo, desde la inspección hasta el pago. Vendí en 5 días.”</p>
+            <span>Camila Torres · Miraflores</span>
           </article>
           <article>
-            <p>“Recibí mi auto con garantía y un plan de financiamiento claro.”</p>
-            <span>Daniel Ríos · Bogotá</span>
+            <p>“El asesor me ayudó a ajustar el precio y conseguimos una oferta justa.”</p>
+            <span>Jorge Salinas · San Isidro</span>
+          </article>
+          <article>
+            <p>“Sentí confianza en cada paso. Ahora recomiendo KliqCarGo a mi familia.”</p>
+            <span>Renata Campos · Surco</span>
           </article>
         </div>
       </section>
 
-      <section id="contacto" class="contact">
-        <div>
-          <h2>¿Listo para vender tu auto?</h2>
-          <p>Agenda una inspección gratuita y recibe una oferta en menos de 24 horas.</p>
+      <section class="faq" id="faq">
+        <div class="section-header">
+          <h2>Preguntas frecuentes</h2>
+          <p>Resolvemos tus dudas para que tomes la mejor decisión.</p>
         </div>
-        <button class="primary">Quiero vender mi auto</button>
+        <div class="faq-list" role="tablist">
+          <button class="faq-item" aria-expanded="false">
+            <span>¿Cuánto cuesta publicar mi auto?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-panel" role="region">
+            <p>No cobramos por publicar. Solo aplicamos una comisión transparente al cierre.</p>
+          </div>
+          <button class="faq-item" aria-expanded="false">
+            <span>¿Cuánto tiempo toma venderlo?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-panel" role="region">
+            <p>El promedio en Lima es de 5 a 10 días según la demanda y el precio.</p>
+          </div>
+          <button class="faq-item" aria-expanded="false">
+            <span>¿Incluye inspección y revisión?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-panel" role="region">
+            <p>Sí, coordinamos la inspección con especialistas certificados sin costo extra.</p>
+          </div>
+          <button class="faq-item" aria-expanded="false">
+            <span>¿Cómo se realiza el pago?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-panel" role="region">
+            <p>Usamos cuentas verificadas y te acompañamos con contratos claros.</p>
+          </div>
+          <button class="faq-item" aria-expanded="false">
+            <span>¿Puedo ajustar el precio durante la publicación?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-panel" role="region">
+            <p>Claro. Nuestro equipo te recomienda el rango ideal según el mercado.</p>
+          </div>
+          <button class="faq-item" aria-expanded="false">
+            <span>¿Venden autos en otras ciudades?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-panel" role="region">
+            <p>Actualmente operamos en Lima, pero pronto expandiremos a otras regiones.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-final">
+        <div>
+          <h2>¿Listo para vender con KliqCarGo?</h2>
+          <p>Agenda tu evaluación y recibe una propuesta hoy mismo.</p>
+        </div>
+        <a class="btn btn-accent" href="#formulario">Empezar ahora</a>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>© 2024 AutoUsados. Todos los derechos reservados.</p>
       <div>
-        <span>Contacto: +57 300 123 4567</span>
-        <span>soporte@autousados.com</span>
+        <h3>KliqCarGo</h3>
+        <p>Marketplace premium para vender autos en Lima con confianza.</p>
       </div>
+      <div class="footer-links">
+        <span>📍 Lima, Perú</span>
+        <span>📞 +51 999 999 999</span>
+        <span>✉️ contacto@kliqcargo.pe</span>
+        <span>Redes: Instagram · Facebook · LinkedIn</span>
+      </div>
+      <a class="btn btn-outline" href="#formulario">Quiero una asesoría</a>
     </footer>
+
+    <a
+      class="whatsapp-float whatsapp-link"
+      href="https://wa.me/51999999999"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Habla por WhatsApp con KliqCarGo"
+      data-whatsapp="floating"
+    >
+      WhatsApp
+    </a>
 
     <script src="script.js"></script>
   </body>
